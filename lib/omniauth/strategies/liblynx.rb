@@ -43,9 +43,11 @@ module OmniAuth
         res = access_token
           .request(:post, options.id_url, body: id_body)
           .parsed
-        institution = res['user_institution']
-        return fail!(:no_institution, NoInstitution.new) unless institution
-        log(:info, "User institution: #{institution}")
+        if id_body[:email].present?
+          institution = res['user_institution']
+          return fail!(:no_institution, NoInstitution.new) unless institution
+          log(:info, "User institution: #{institution}")
+        end
         id = res['id']
         url = URI.join(callback_url, "?email=#{id_body[:email]}").to_s
         hmac = OpenSSL::HMAC.hexdigest('SHA256', client.secret, url)
