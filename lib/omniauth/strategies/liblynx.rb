@@ -28,14 +28,15 @@ module OmniAuth
         options[:callback_url] || (full_host + script_name + callback_path)
       end
 
-      uid { raw_info.dig('individual', 'display_name') }
+      uid { raw_info['id'] }
 
       info do
         i = raw_info['individual']
         {
           'email' => id_body[:email],
           'display_name' => i['display_name'],
-          'surname' => i['surname']
+          'surname' => i['surname'],
+          'given_name' => i['given_name']
         }
       end
 
