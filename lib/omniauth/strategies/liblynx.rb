@@ -34,7 +34,8 @@ module OmniAuth
         i = raw_info['individual']
         {
           'email' => id_body[:email],
-          'display_name' => i['display_name'],
+          'institution' => request.params['institution'],
+          'name' => i['display_name'],
           'surname' => i['surname'],
           'given_name' => i['given_name']
         }
@@ -50,7 +51,7 @@ module OmniAuth
           log(:info, "User institution: #{institution}")
         end
         id = res['id']
-        url = URI.join(callback_url, "?email=#{id_body[:email]}").to_s
+        url = URI.join(callback_url, "?email=#{id_body[:email]}&institution=#{institution['account_name']}").to_s
         hmac = OpenSSL::HMAC.hexdigest('SHA256', client.secret, url)
         redirect("#{client.site}/wayf/#{id}?url=#{CGI.escape(url)}&hash=#{hmac}")
       end
