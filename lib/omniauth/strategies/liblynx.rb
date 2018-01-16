@@ -35,6 +35,7 @@ module OmniAuth
         {
           'email' => id_body[:email],
           'institution' => request.params['institution'],
+          'reference' => raw_info['reference'],
           'name' => i['display_name'],
           'surname' => i['surname'],
           'given_name' => i['given_name']
@@ -57,10 +58,13 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token
-          .request(:post, options.id_url, body: id_body.merge(url: @auth_url))
-          .parsed
-          .dig('account_individual') || {}
+        @raw_info ||= begin
+          r = access_token
+            .request(:post, options.id_url, body: id_body.merge(url: @auth_url))
+            .parsed
+          ref = r.dig('account', 'publisher_reference')
+          (r['account_individual'] || {}).merge('reference' => ref)
+        end
       end
 
       def callback_phase
