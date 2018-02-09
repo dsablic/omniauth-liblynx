@@ -1,4 +1,4 @@
-# OmniAuth LibLynx Strategy &nbsp;[![Build Status](https://travis-ci.org/dsablic/omniauth-liblynx.svg?branch=master)](https://travis-ci.org/dsablic/omniauth-liblynx)
+# OmniAuth LibLynx Strategy &nbsp;[![Build Status](https://travis-ci.org/dsablic/omniauth-liblynx.svg?branch=master)](https://travis-ci.org/dsablic/omniauth-liblynx) [![Gem Version](https://badge.fury.io/rb/omniauth-liblynx.svg)](https://badge.fury.io/rb/omniauth-liblynx)
 
 ## Installation
 
