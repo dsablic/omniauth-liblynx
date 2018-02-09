@@ -1,0 +1,7 @@
+deploy:
+  provider: rubygems
+  api_key:
+    secure: s5y9lrj7GWE2rz4U7Eh9It12Sem2bGeuapqdnj8VDoeOfTacRXS+iIcVN/D/xsvi7Pg3oNQRBSz0Ar/5gsK9CEDznHJ0nlth6ocqHqoOy3cDf1eGE5nz/T8Wx67sL73Q5UpYPReWZ0XXm+66ywLOQI+mXUct+iA5FSpBLRzalcS+o0ICtxFOxPZ6XouwjHKjNf4rCFYRvKAKO3rLvH4dzPdQotQ+DSaXtTmzUFANF0HuTcaAEmpNm/VjJ4B8S9WvcYU7vyuThxu5LBBzp33eMTzHSSjKg3QCTzYaJ26dN8TAxhVITwPq8Y3LuqWs8wf0xcUi0t5VokORneAlnSz0oEbDYC6x8gNaJGCszKGQ8nmECB0+cVLF5rxm5ehVIOs+VYgViOn8RinqrqTSCym3FwierA4WfO/6B/xfvRqAk6zd/qJhDjaPChdBM39o5Qs/79avmk9/xWWHTfDZppy7BZ3Hj7R55Zk9x+SUdPP3nMyhNKsbhmTU5jX+4c/7m5tvidz78f5hLIjVrfRmggdZjnqe+lo63rqzprwXCshrpwfv0jvWHZ0LbE+hFfMVfi2xoM8OJNe3ncG1qWeM+Cz4ANjN3E2m2mQcehrWzBFOvP7LWqrHY/MseY1SGrOzJdQ2NuVkwt8UFAj9zWu0/58dPhV6OuDMfjPfmz/CKP5PVHg=
+  gem: omniauth-liblynx
+  on:
+    repo: dsablic/omniauth-liblynx
