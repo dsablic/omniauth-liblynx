@@ -16,6 +16,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
   gem.version       = OmniAuth::LibLynx::VERSION
 
+  gem.add_development_dependency 'bundler'
+  gem.add_development_dependency 'rake', '< 11.0'
+
   gem.add_dependency 'omniauth', '~> 1.5'
   gem.add_dependency 'omniauth-oauth2', '>= 1.4.0', '< 2.0'
 end
