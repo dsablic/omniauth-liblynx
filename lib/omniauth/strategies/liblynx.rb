@@ -88,7 +88,7 @@ module OmniAuth
           url: callback_url,
           user_agent: request.user_agent,
           email: request.params['email'],
-          force_sso_login: request.params['force_sso_login']
+          forceSsoLogin: request.params['force_sso_login']
         }.compact
       end
     end
