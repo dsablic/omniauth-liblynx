@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'omniauth-oauth2'
 
 module OmniAuth
@@ -31,7 +33,7 @@ module OmniAuth
       uid { raw_info['id'] }
 
       info do
-        i = raw_info['individual']
+        i = raw_info['individual'] || {}
         {
           'email' => id_body[:email],
           'institution' => request.params['institution'],

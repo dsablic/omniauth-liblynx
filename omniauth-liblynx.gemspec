@@ -1,5 +1,3 @@
-
-# -*- encoding: utf-8 -*-
 require File.expand_path('../lib/omniauth-liblynx/version', __FILE__)
 
 Gem::Specification.new do |gem|
@@ -9,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.summary       = 'OmniAuth strategy for LibLynx'
   gem.license       = 'MIT'
 
-  gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = 'omniauth-liblynx'
