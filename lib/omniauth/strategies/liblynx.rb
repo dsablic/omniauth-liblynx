@@ -70,7 +70,11 @@ module OmniAuth
       end
 
       def callback_phase
-        @auth_url = [id_body[:url], '?', URI.encode_www_form(request.params)].join
+        @auth_url = [
+          id_body[:url],
+          '?',
+          URI.encode_www_form(request.params)
+        ].join
         return fail!(:no_account_info, NoAccountInfo.new) if raw_info.blank?
         env['omniauth.auth'] = auth_hash
         call_app!
@@ -87,7 +91,7 @@ module OmniAuth
       def id_body
         {
           ip: request.ip,
-          url: callback_url,
+          url: request.params['url'] || callback_url,
           user_agent: request.user_agent,
           email: request.params['email'],
           forceSsoLogin: request.params['force_sso_login']
