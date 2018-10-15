@@ -40,7 +40,8 @@ module OmniAuth
           'reference' => raw_info['reference'],
           'name' => i['display_name'],
           'surname' => i['surname'],
-          'given_name' => i['given_name']
+          'given_name' => i['given_name'],
+          'raw' => raw_info.reject { |k, _| k.index('_') == 0 }
         }
       end
 
