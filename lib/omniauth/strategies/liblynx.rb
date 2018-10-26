@@ -41,7 +41,8 @@ module OmniAuth
           'name' => i['display_name'],
           'surname' => i['surname'],
           'given_name' => i['given_name'],
-          'raw' => raw_info.reject { |k, _| k.index('_') == 0 }
+          'raw' => raw_info['_response'],
+          'attributes' => raw_info.dig('_response', 'attributes')
         }
       end
 
@@ -66,7 +67,12 @@ module OmniAuth
             .request(:post, options.id_url, body: id_body.merge(url: @auth_url))
             .parsed
           ref = r.dig('account', 'publisher_reference')
-          (r['account_individual'] || {}).merge('reference' => ref)
+          {
+            '_response' => r,
+            'reference' => ref
+          }
+            .compact
+            .merge(r['account_individual'] || {})
         end
       end
 
