@@ -42,7 +42,7 @@ module OmniAuth
           'surname' => i['surname'],
           'given_name' => i['given_name'],
           'raw' => raw_info['_response'],
-          'attributes' => raw_info.dig('_response', 'attributes')
+          'attributes' => raw_info.dig('_response', 'raw_attr')
         }
       end
 
