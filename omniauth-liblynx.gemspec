@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = OmniAuth::LibLynx::VERSION
 
   gem.add_development_dependency 'bundler'
-  gem.add_development_dependency 'rake', '< 11.0'
+  gem.add_development_dependency 'rake', '< 14.0'
   gem.add_development_dependency 'rubocop'
 
   gem.add_dependency 'omniauth', '~> 1.9'
