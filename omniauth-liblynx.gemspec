@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path('lib/omniauth-liblynx/version', __dir__)
 
 Gem::Specification.new do |gem|
@@ -6,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/dsablic/omniauth-liblynx'
   gem.summary       = 'OmniAuth strategy for LibLynx'
   gem.license       = 'MIT'
-  gem.required_ruby_version = '>= 2.3.0'
+  gem.required_ruby_version = '>= 2.6.0'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
