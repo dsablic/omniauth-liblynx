@@ -2,7 +2,6 @@ rvm:
   - 2.6
 before_install:
   - gem install bundler
-  - bundle config set --local deployment 'true'
 install:
   - bundle install
 deploy:
